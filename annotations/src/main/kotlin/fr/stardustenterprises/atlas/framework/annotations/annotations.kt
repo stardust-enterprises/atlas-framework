@@ -10,14 +10,12 @@ package fr.stardustenterprises.atlas.framework.annotations
  * @since 0.0.1
  */
 @Retention(AnnotationRetention.RUNTIME)
-@Target(
-    AnnotationTarget.TYPE,
-    AnnotationTarget.CLASS,
-    AnnotationTarget.FIELD,
-    AnnotationTarget.PROPERTY,
-    AnnotationTarget.FUNCTION
-)
+@Target(AnnotationTarget.CLASS)
 annotation class NamedProxy(
     val asRegex: Boolean = false,
     vararg val value: String,
 )
+
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.CONSTRUCTOR)
+annotation class Constructor
