@@ -1,5 +1,5 @@
 object Coordinates {
-    const val NAME = "kotlin-template"
+    const val NAME = "atlas-framework"
     const val DESC = "Project description."
     const val VENDOR = "Stardust Enterprises"
 
@@ -15,7 +15,7 @@ object Pom {
         License("ISC License", "https://opensource.org/licenses/ISC")
     )
     val developers = arrayOf(
-        Developer("dev1")
+        Developer("xtrm")
     )
 }
 

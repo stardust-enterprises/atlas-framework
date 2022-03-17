@@ -12,6 +12,7 @@ object Plugins {
 
 object Dependencies {
     const val KOTLIN = kotlinVersion
+    const val DEFACE = "0.2.0"
 
     val kotlinModules = arrayOf("stdlib")
 }
