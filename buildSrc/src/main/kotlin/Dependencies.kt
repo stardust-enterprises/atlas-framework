@@ -12,13 +12,23 @@ object Plugins {
 
 object Dependencies {
     const val KOTLIN = kotlinVersion
+
+    // Bootloader
+    const val LOGBACK = "1.2.6"
+    const val SLF4J = "1.7.30"
+    const val BOOTCLASSLOADER = "0.1.0"
     const val DEFACE = "0.2.0"
+    const val RETROLOADER = "0.1.0"
+
+    // init-classpath
+    const val LAUNCHWRAPPER = "1.12"
 
     val kotlinModules = arrayOf("stdlib")
 }
 
 object Repositories {
-    val mavenUrls = arrayOf(
-        "https://jitpack.io/",
-    )
+    val mavenUrls: Array<String> =
+        arrayOf(
+//            "https://jitpack.io/",
+        )
 }

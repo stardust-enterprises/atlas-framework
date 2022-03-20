@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.annotations
+package fr.stardustenterprises.atlas.framework.bootloader.annotations
 
 /**
  * Indicates the Mapping class that this member comes from

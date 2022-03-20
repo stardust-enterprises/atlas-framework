@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.annotations
+package fr.stardustenterprises.atlas.framework.bootloader.annotations
 
 /**
  * Used to annotate proxy/mapping classes.
@@ -11,11 +11,14 @@ package fr.stardustenterprises.atlas.framework.annotations
  */
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CLASS)
-annotation class NamedProxy(
+annotation class Mapping(
     val asRegex: Boolean = false,
     vararg val value: String,
 )
 
+/**
+ * Used to annotate constructors
+ */
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CONSTRUCTOR)
 annotation class Constructor

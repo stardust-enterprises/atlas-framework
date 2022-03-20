@@ -6,3 +6,5 @@ pluginManagement.repositories {
 }
 include("annotations")
 include("bootloader")
+include("init-injection")
+include("init-classpath")

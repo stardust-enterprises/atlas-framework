@@ -1,6 +1,6 @@
 object Coordinates {
     const val NAME = "atlas-framework"
-    const val DESC = "Project description."
+    const val DESC = "Injection-based modular modding framework."
     const val VENDOR = "Stardust Enterprises"
 
     const val GIT_HOST = "github.com"
