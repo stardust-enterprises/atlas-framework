@@ -8,6 +8,7 @@ object Plugins {
     const val KTLINT = "10.2.1"
     const val DOKKA = kotlinVersion
     const val NEXUS_PUBLISH = "1.0.0"
+    const val GRADLE_RUST = "3.1.1"
 }
 
 object Dependencies {

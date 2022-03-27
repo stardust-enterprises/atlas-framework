@@ -3,7 +3,11 @@
 [![Build][badge-github-ci]][project-gradle-ci]
 [![Maven Central][badge-mvnc]][project-mvnc]
 
-now.
+it finally begins.
+
+**atlas** is a modding toolchain designed for intercompatibility and efficiency.
+
+
 
 # contributing
 

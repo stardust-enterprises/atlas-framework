@@ -2,6 +2,8 @@ plugins {
     with(Plugins) {
         kotlin("jvm") version KOTLIN
     }
+
+    `java-library`
 }
 
 dependencies {
