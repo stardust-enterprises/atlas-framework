@@ -44,7 +44,7 @@ public class RuntimeEntrypoint {
         }
 
         // load bootloader
-        appendToBootClassloader(bootloaderFile.getAbsolutePath());
+        appendToClassLoader0(bootloaderFile.getAbsolutePath());
 
         // call bootloader
         Class<?> bootloaderInterfaceClass =
