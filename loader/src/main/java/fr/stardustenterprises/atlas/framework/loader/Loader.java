@@ -9,11 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Atlas Framework Bootloader.
+ * Atlas Framework Loader.
  */
 public class Loader implements ILoader {
     /**
-     * The Bootloader's {@link Logger} instance.
+     * The Loader's {@link Logger} instance.
      */
     private static final Logger LOGGER =
         LoggerFactory.getLogger(Loader.class);

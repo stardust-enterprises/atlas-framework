@@ -4,7 +4,7 @@ import fr.stardustenterprises.atlas.framework.api.loader.classloader.AtlasClassL
 import fr.stardustenterprises.atlas.framework.api.loader.library.ILibraryManager;
 
 /**
- * The base Bootloader interface.
+ * The base Loader interface.
  */
 public interface ILoader {
     /**
@@ -27,5 +27,4 @@ public interface ILoader {
      * @return the framework's {@link ClassLoader}
      */
     AtlasClassLoader getFrameworkClassLoader();
-
 }
