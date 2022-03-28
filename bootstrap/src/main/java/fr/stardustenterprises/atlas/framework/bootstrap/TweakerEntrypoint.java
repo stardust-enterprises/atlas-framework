@@ -1,7 +1,6 @@
-package fr.stardustenterprises.atlas.framework.init;
+package fr.stardustenterprises.atlas.framework.bootstrap;
 
 import net.minecraft.launchwrapper.ITweaker;
-import net.minecraft.launchwrapper.Launch;
 import net.minecraft.launchwrapper.LaunchClassLoader;
 
 import java.io.File;
@@ -17,10 +16,6 @@ import java.util.List;
  * TODO(@xtrm): this
  */
 public class TweakerEntrypoint implements ITweaker {
-    static {
-        Launch.classLoader.addURL();
-    }
-
     @Override
     public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
 

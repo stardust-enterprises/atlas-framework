@@ -57,7 +57,7 @@ pub unsafe extern "system" fn JNI_OnLoad(_vm: *mut JavaVM, _reserved: &mut c_voi
         (*(*JVMTI)).AddToSystemClassLoaderSearch.unwrap()(JVMTI, path.as_ptr());
 
         // Load the runtime class
-        let name = CString::new("fr/stardustenterprises/atlas/framework/init/RuntimeEntrypoint").unwrap();
+        let name = CString::new("fr/stardustenterprises/atlas/framework/bootstrap/RuntimeEntrypoint").unwrap();
         let clazz = (*(*jni)).FindClass.unwrap()(jni, name.as_ptr());
 
         // Define its native method

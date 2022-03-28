@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.init;
+package fr.stardustenterprises.atlas.framework.bootstrap;
 
 import java.io.File;
 import java.lang.reflect.Method;
