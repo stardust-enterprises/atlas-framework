@@ -6,7 +6,8 @@ pluginManagement.repositories {
 }
 
 include("annotations")
-include("loader")
-include("engine")
 include("bootstrap")
-include("loader-native")
+include("bootstrap-native")
+include("engine")
+include("loader")
+
