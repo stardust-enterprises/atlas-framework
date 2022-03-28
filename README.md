@@ -1,5 +1,4 @@
 # Atlas Framework
-___
 
 [![Build][badge-github-ci]][project-gradle-ci]
 [![Maven Central][badge-mvnc]][project-mvnc]
@@ -12,7 +11,6 @@ management of mods, as well as **[linking them](#linkermodule-linker)** to the p
 source code, via the use of [mapping classes](#mapping-classes).
 
 # Concepts
-___
 
 ### Mapping classes
 
@@ -33,7 +31,6 @@ incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
 tincidunt. Ultrices eros in cursus turpis massa.
 
 # Modules
-___
 
 The **Atlas Framework** is divided into many (sub)modules for ease of 
 code readability and maintainability.
@@ -74,13 +71,11 @@ incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
 tincidunt. Ultrices eros in cursus turpis massa.
 
 # Contributing
-___
 
 You can contribute by [forking the repository][fork], making your changes and 
 [creating a new pull request][new-pr] describing what you changed, why and how.
 
 # Licensing
-___
 
 This project is under the [ISC license][project-license].
 
