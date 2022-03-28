@@ -7,24 +7,24 @@
 intercompatibility and efficiency, and we're not taking this lightly.
 
 The **Atlas Framework** is the core of the platform, allowing for loading and 
-management of mods, as well as **[linking them](#linkermodule-linker)** to the program's 
-source code, via the use of [mapping classes](#mapping-classes).
+management of mods, as well as **[linking them](#linkermodule-linker)** to the 
+program's source code, via the use of [mapping classes](#mapping).
 
 # Concepts
 
-### Mapping classes
+### Mapping
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
 tincidunt. Ultrices eros in cursus turpis massa.
 
-### Linked Proxy classes
+### Linked Proxy
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
 tincidunt. Ultrices eros in cursus turpis massa.
 
-### Facade Proxy classes
+### Facade Proxy
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
@@ -61,8 +61,8 @@ tincidunt. Ultrices eros in cursus turpis massa.
 
 ### [linker][module-linker]
 
-Module in charge of analyzing the required [mapping classes](#mapping-classes),
-and creating runtime [linked proxy classes](#linked-proxy-classes) based on those.
+Module in charge of analyzing the required [mapping classes](#mapping),
+and creating runtime [linked proxy classes](#linked-proxy) based on those.
 
 ### [loader][module-loader]
 
@@ -77,7 +77,8 @@ You can contribute by [forking the repository][fork], making your changes and
 
 # Licensing
 
-This project is under the [ISC license][project-license].
+[Atlas Framework][project-url], © [Stardust Enterprises][stardust-enterprises] 
+2020-present, is licensed under [CC BY-SA 4.0][project-license].
 
 <!-- Links -->
 
@@ -118,6 +119,8 @@ This project is under the [ISC license][project-license].
 [project-gradle-ci]: https://github.com/stardust-enterprises/atlas-framework/actions/workflows/gradle-ci.yml "gradle ci workflow"
 
 [project-license]: https://github.com/stardust-enterprises/atlas-framework/blob/trunk/LICENSE "LICENSE source file"
+
+[stardust-enterprises]: https://github.com/stardust-enterprises "stardust-enterprises link"
 
 <!-- Badges -->
 
