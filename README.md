@@ -7,7 +7,7 @@
 intercompatibility and efficiency, and we're not taking this lightly.
 
 The **Atlas Framework** is the core of the platform, allowing for loading and 
-management of mods, as well as **[linking them](#linkermodule-linker)** to the 
+management of mods, as well as **[linking them](#linker)** to the 
 program's source code, via the use of [mapping classes](#mapping).
 
 # Concepts
@@ -51,7 +51,7 @@ tincidunt. Ultrices eros in cursus turpis massa.
 ### [bootstrap-native][module-bootstrap-native]
 
 Native module injected into the target process to append the framework's
-[bootstrap](#bootstrapmodule-bootstrap) and start the runtime injection process.
+[bootstrap](#bootstrap) and start the runtime injection process.
 
 ### [engine][module-engine]
 
