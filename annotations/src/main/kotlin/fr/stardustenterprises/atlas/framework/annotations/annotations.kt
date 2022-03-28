@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.loader.annotations
+package fr.stardustenterprises.atlas.framework.annotations
 
 /**
  * Used to annotate proxy/mapping classes.
