@@ -1,84 +1,72 @@
-# Atlas Framework
+# Atlas Framework [![Maven Central][badge-mvnc]][project-mvnc] [![Build][badge-github-ci]][project-gradle-ci]
 
-[![Build][badge-github-ci]][project-gradle-ci]
-[![Maven Central][badge-mvnc]][project-mvnc]
+**Atlas** is a **next-gen** modding toolchain designed for intercompatibility and efficiency, and we're not taking this
+lightly.
 
-**Atlas** is a **next-gen** modding toolchain designed for 
-intercompatibility and efficiency, and we're not taking this lightly.
-
-The **Atlas Framework** is the core of the platform, allowing for loading and 
-management of mods, as well as **[linking them](#linker)** to the 
-program's source code, via the use of [mapping classes](#mapping).
+The **Atlas Framework** is the whole platform's core, allowing for loading and management of mods, as well as
+**[linking them](#linker)** to the  program's source code, via the use of [mapping classes](#mapping).
 
 # Concepts
 
 ### Mapping
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 ### Linked Proxy
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 ### Facade Proxy
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 # Modules
 
-The **Atlas Framework** is divided into many (sub)modules for ease of 
-code readability and maintainability.
+The **Atlas Framework** is divided into many (sub)modules for ease of  code readability and maintainability.
 
-Here is a quick description for each one:
+Here is a quick overview and description of and for each one:
 
 ### [annotations][module-annotations]
 
-The annotations required for both the Mapping declarations and the generated
-linked proxies.
+The annotations required for both the Mapping declarations and the generated linked proxies.
 
 ### [bootstrap][module-bootstrap]
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 ### [bootstrap-native][module-bootstrap-native]
 
-Native module injected into the target process to append the framework's
-[bootstrap](#bootstrap) and start the runtime injection process.
+Native module injected into the target process to append the framework's [bootstrap](#bootstrap) and start the runtime
+injection process.
 
 ### [engine][module-engine]
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis 
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 ### [linker][module-linker]
 
-Module in charge of analyzing the required [mapping classes](#mapping),
-and creating runtime [linked proxy classes](#linked-proxy) based on those.
+Module in charge of analyzing the required [mapping classes](#mapping), and creating runtime
+[linked proxy classes](#linked-proxy) based on those.
 
 ### [loader][module-loader]
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Duis ultricies lacus sed turpis
-tincidunt. Ultrices eros in cursus turpis massa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
 # Contributing
 
-You can contribute by [forking the repository][fork], making your changes and 
-[creating a new pull request][new-pr] describing what you changed, why and how.
+You can contribute by [forking the repository][fork], making your changes and  [creating a new pull request][new-pr]
+describing what you changed, why and how.
 
 # Licensing
 
-[Atlas Framework][project-url], © [Stardust Enterprises][stardust-enterprises] 
-2020-present, is licensed under [CC BY-SA 4.0][project-license].
+[Atlas Framework][project-url], © [Stardust Enterprises][stardust-enterprises] 2020-present, is licensed under the
+[CC BY-SA 4.0][project-license] license.
 
 <!-- Links -->
 
