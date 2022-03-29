@@ -3,8 +3,8 @@
 **Atlas** is a **next-gen** modding toolchain designed for intercompatibility and efficiency, and we're not taking this
 lightly.
 
-The **Atlas Framework** is the whole platform's core, allowing for loading and management of mods, as well as
-**[linking them](#linker)** to the  program's source code, via the use of [mapping classes](#mapping).
+The **Atlas Framework** is the platform's core, allowing for loading and management of mods, as well as
+**[linking them](#linker)** to the program's source code via the use of [mapping classes](#mapping).
 
 # Concepts
 
@@ -27,7 +27,7 @@ aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpi
 
 The **Atlas Framework** is divided into many (sub)modules for ease of  code readability and maintainability.
 
-Here is a quick overview and description of and for each one:
+Here is a quick overview and description for each of them:
 
 ### [annotations][module-annotations]
 
