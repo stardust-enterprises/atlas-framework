@@ -1,26 +1,24 @@
 package fr.stardustenterprises.atlas.framework.api.loader.library;
 
 import fr.stardustenterprises.atlas.framework.api.loader.classloader.RemappingClassLoader;
-import fr.stardustenterprises.atlas.framework.api.loader.exceptions.LibraryException;
+import fr.stardustenterprises.atlas.framework.api.loader.exception.LibraryException;
 import fr.stardustenterprises.atlas.framework.api.loader.library.repository.IRepository;
 
 import java.net.URL;
 import java.util.List;
 
 /**
- * Library Management Interface.
+ * The library management interface.
  *
  * @author xtrm
  * @since 0.0.1
  */
 public interface ILibraryManager {
-
     /**
      * Populates the libraries with the provided declaration(s).
      *
-     * @param libraryDeclarations library declaration(s).
-     *
-     * @throws LibraryException if another library
+     * @param libraryDeclarations The library declaration(s).
+     * @throws LibraryException TODO(@xtrm-en)
      */
     void populateLibraries(String... libraryDeclarations)
         throws LibraryException;
@@ -28,7 +26,7 @@ public interface ILibraryManager {
     /**
      * Populates the repositories with the provided declaration(s).
      *
-     * @param repositoryDeclarations repository declaration(s).
+     * @param repositoryDeclarations Repository declaration(s).
      */
     void populateRepositories(String... repositoryDeclarations);
 
@@ -37,18 +35,17 @@ public interface ILibraryManager {
     void consumeRepositoryDeclaration(URL url);
 
     /**
-     * @return the library {@link ClassLoader}
+     * @return The library {@link ClassLoader}.
      */
     RemappingClassLoader getLibraryClassLoader();
 
     /**
-     * @return the loaded {@link ILibrary Library} list.
+     * @return The loaded {@link ILibrary Library} list.
      */
     List<ILibrary> getLibraries();
 
     /**
-     * @return the registered {@link IRepository Repository} list.
+     * @return The registered {@link IRepository Repository} list.
      */
     List<IRepository<?>> getRepositories();
-
 }

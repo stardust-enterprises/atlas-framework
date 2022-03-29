@@ -39,7 +39,8 @@ public class RuntimeEntrypoint {
             atlasDataDir,
             "modules" + File.separator + "bootloader.jar"
         );
-        if(!bootloaderFile.exists()) {
+
+        if (!bootloaderFile.exists()) {
             throw new RuntimeException("Bootloader module doesn't exist!");
         }
 
@@ -49,15 +50,16 @@ public class RuntimeEntrypoint {
         // call bootloader
         Class<?> bootloaderInterfaceClass =
             Class.forName(ILOADER_CLASS, false, null);
+
         ServiceLoader<?> serviceLoader =
             ServiceLoader.load(bootloaderInterfaceClass);
 
         Object bootloaderInstance = serviceLoader.iterator().next();
-        Class<?> bootloaderClass = bootloaderInstance.getClass();
-        Method m_initialize =
-            bootloaderClass.getDeclaredMethod("initialize");
-        m_initialize.setAccessible(true);
-        m_initialize.invoke(bootloaderInstance);
+        Method initializeMethod =
+            bootloaderInstance.getClass().getDeclaredMethod("initialize");
+
+        initializeMethod.setAccessible(true);
+        initializeMethod.invoke(bootloaderInstance);
     }
 
     private static String getDefaultDataDir() {
@@ -67,7 +69,7 @@ public class RuntimeEntrypoint {
     /**
      * Internal method used to inject into the boot {@link ClassLoader}
      * the framework's Bootloader.
-     *
+     * <p>
      * Note: this method is linked to the native library at runtime via JNI.
      *
      * @param absolutePath The jarfile's absolute path.

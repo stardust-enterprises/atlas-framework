@@ -17,20 +17,6 @@ import java.util.List;
  */
 public class TweakerEntrypoint implements ITweaker {
     @Override
-    public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
-
-    }
-
-    @Override
-    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        //Ideas:
-        /*
-        - call AFW's game-analysis on the classpath to find launch target (main)
-        - redirect Deface's hooks into LaunchClassLoader? maybe useless
-         */
-    }
-
-    @Override
     public String getLaunchTarget() {
         return null;
     }
@@ -38,5 +24,24 @@ public class TweakerEntrypoint implements ITweaker {
     @Override
     public String[] getLaunchArguments() {
         return new String[0];
+    }
+
+    @Override
+    public void acceptOptions(
+        List<String> args,
+        File gameDir,
+        File assetsDir,
+        String profile
+    ) {
+        // TODO
+    }
+
+    @Override
+    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
+        // TODO Ideas:
+        /*
+        - call AFW's game-analysis on the classpath to find launch target (main)
+        - redirect Deface's hooks into LaunchClassLoader? maybe useless
+         */
     }
 }

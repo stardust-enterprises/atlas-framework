@@ -1,6 +1,6 @@
 package fr.stardustenterprises.atlas.framework.loader.library.repository;
 
-import fr.stardustenterprises.atlas.framework.api.loader.exceptions.LibraryException;
+import fr.stardustenterprises.atlas.framework.api.loader.exception.LibraryException;
 import fr.stardustenterprises.atlas.framework.api.loader.library.maven.IMavenLibrary;
 
 import java.io.File;
@@ -42,9 +42,9 @@ public class RemoteMavenRepository extends LocalMavenRepository {
     }
 
     protected URL findFirstURL(IMavenLibrary library) {
-        for (URL repoUrl : this.remoteRepositories) {
-            // TODO(@xtrm)
-        }
+        //for (URL repoUrl : this.remoteRepositories) {
+        //    TODO(@xtrm-en)
+        //}
         return null;
     }
 

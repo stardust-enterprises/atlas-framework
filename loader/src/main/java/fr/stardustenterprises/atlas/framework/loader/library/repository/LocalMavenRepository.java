@@ -1,6 +1,6 @@
 package fr.stardustenterprises.atlas.framework.loader.library.repository;
 
-import fr.stardustenterprises.atlas.framework.api.loader.exceptions.LibraryException;
+import fr.stardustenterprises.atlas.framework.api.loader.exception.LibraryException;
 import fr.stardustenterprises.atlas.framework.api.loader.library.maven.IMavenLibrary;
 import fr.stardustenterprises.atlas.framework.api.loader.library.repository.IRepository;
 
@@ -17,32 +17,28 @@ public class LocalMavenRepository implements IRepository<IMavenLibrary> {
     @Override
     public Path fetchLibrary(IMavenLibrary library) {
         File targetFile = new File(root, getDestinationPath(library));
-        if (targetFile.exists()) {
-            return targetFile.toPath();
+        if (!targetFile.exists()) {
+            throw new LibraryException(
+                String.format(
+                    "Library \"%s\" version \"%s\" wasn't found in %s",
+                    library.getId(),
+                    library.getVersion(),
+                    root.getAbsolutePath()
+                )
+            );
         }
-        throw new LibraryException(
-            String.format(
-                "Library \"%s\" version \"%s\" wasn't found in %s",
-                library.getId(),
-                library.getVersion(),
-                root.getAbsolutePath()
-            )
-        );
+
+        return targetFile.toPath();
     }
 
     protected String getDestinationPath(IMavenLibrary library) {
-        String fullDeclaration = library.getGroupId().replace(
-            '.',
-            File.separatorChar
-        );
-        fullDeclaration += File.separator;
-        fullDeclaration += library.getName();
-        fullDeclaration += File.separator;
-        fullDeclaration += library.getVersion();
-        fullDeclaration += File.separator;
-        fullDeclaration += getFileName(library);
-
-        return fullDeclaration;
+        return library.getGroupId().replace('.', File.separatorChar)
+            + File.separator
+            + library.getName()
+            + File.separator
+            + library.getVersion()
+            + File.separator
+            + getFileName(library);
     }
 
     protected String getFileName(IMavenLibrary library) {

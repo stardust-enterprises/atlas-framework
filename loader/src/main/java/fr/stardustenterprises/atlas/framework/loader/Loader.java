@@ -43,14 +43,6 @@ public class Loader implements ILoader {
      * @inheritDoc
      */
     @Override
-    public void initialize() {
-        this.libraryManager.populateLibraries("boot");
-    }
-
-    /**
-     * @inheritDoc
-     */
-    @Override
     public ILibraryManager getLibraryManager() {
         return this.libraryManager;
     }
@@ -61,5 +53,13 @@ public class Loader implements ILoader {
     @Override
     public AtlasClassLoader getFrameworkClassLoader() {
         return this.frameworkClassLoader;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public void initialize() {
+        this.libraryManager.populateLibraries("boot");
     }
 }

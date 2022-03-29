@@ -39,12 +39,14 @@ public class AtlasClassLoader extends URLClassLoader {
 
     /**
      * Correctly parsed and defined classes cache.
+     * <p>
      * (className) -> Class
      */
     private final Map<String, Class<?>> classCache = new ConcurrentHashMap<>();
 
     /**
      * Correctly found and read resources cache.
+     * <p>
      * (resourcePath) -> byte[]
      */
     private final Map<URL, byte[]> resourceCache = new ConcurrentHashMap<>();
@@ -55,13 +57,13 @@ public class AtlasClassLoader extends URLClassLoader {
     private final Set<String> invalidClasses = new HashSet<>();
 
     /**
-     * Unknown/not found resources names.
+     * Unknown/not found resources URLs.
      */
     private final Set<URL> invalidResources = new HashSet<>();
 
     /**
-     * List of packages/classes to delegate loading to
-     * the parent {@link ClassLoader}.
+     * List of packages/classes to delegate loading to the parent
+     * {@link ClassLoader}.
      */
     private final Set<String> ignorePackages = new HashSet<>();
 
@@ -88,6 +90,7 @@ public class AtlasClassLoader extends URLClassLoader {
                     if (url == null) {
                         return null;
                     }
+
                     byte[] classBytes = getClassBytes(url);
                     if (classBytes == null) {
                         return null;
@@ -101,9 +104,7 @@ public class AtlasClassLoader extends URLClassLoader {
                         try {
                             String packageName = className.substring(0, index);
 
-                            if (connection instanceof JarURLConnection) {
-                                JarURLConnection jarURLConnection =
-                                    (JarURLConnection) connection;
+                            if (connection instanceof JarURLConnection jarURLConnection) {
                                 JarFile jarFile = jarURLConnection.getJarFile();
 
                                 if (
@@ -159,7 +160,9 @@ public class AtlasClassLoader extends URLClassLoader {
                     } catch (Throwable throwable) {
                         return null;
                     }
-                });
+                }
+            );
+
             if (clazz != null) {
                 return clazz;
             }
@@ -169,69 +172,11 @@ public class AtlasClassLoader extends URLClassLoader {
         throw new ClassNotFoundException(name);
     }
 
-    private byte[] getClassBytes(URL url) {
-        if (!this.invalidResources.contains(url)) {
-            byte[] classBytes = this.resourceCache.computeIfAbsent(
-                url, classURL -> {
-                    InputStream is;
-                    try {
-                        ByteArrayOutputStream baos =
-                            new ByteArrayOutputStream();
-                        is = url.openStream();
-
-                        int temp;
-                        byte[] data = new byte[4];
-
-                        while (
-                            (temp = is.read(data, 0, data.length)) != -1
-                        ) {
-                            baos.write(data, 0, temp);
-                        }
-
-                        baos.flush();
-
-                        return baos.toByteArray();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    return null;
-                });
-            if (classBytes != null) {
-                return classBytes;
-            }
-        }
-
-        this.invalidResources.add(url);
-        return null;
-    }
-
-    private URLConnection connect(URL url) {
-        try {
-            return url.openConnection();
-        } catch (Exception ignored) {
-        }
-        return null;
-    }
-
-    /**
-     * Allow for modification of classfile buffers.
-     *
-     * This method should be implemented in
-     * this {@link ClassLoader}'s subclasses.
-     *
-     * @param className The class' name.
-     * @param classBytes The class's bytecode.
-     */
-    protected byte[] modifyClassBuffer(String className, byte[] classBytes) {
-        return classBytes;
-    }
-
     /**
      * Defines a {@link Class} on this {@link ClassLoader}.
      *
-     * @param className   The class's name.
-     * @param classBuffer The class's bytecode.
+     * @param className   The class' name.
+     * @param classBuffer The class' bytecode.
      * @return The defined {@link Class}.
      * @throws ClassFormatError if the class buffer is invalid.
      */
@@ -259,8 +204,8 @@ public class AtlasClassLoader extends URLClassLoader {
     }
 
     /**
-     * Adds a package/class path to the list of "ignored"/delegated packages
-     * to the parent {@link ClassLoader}.
+     * Adds a package/class path to the list of "ignored"/delegated packages to
+     * the parent {@link ClassLoader}.
      *
      * @param path The package/class path.
      */
@@ -276,11 +221,11 @@ public class AtlasClassLoader extends URLClassLoader {
     }
 
     /**
-     * Prunes the {@link AtlasClassLoader#invalidClasses} set according
-     * to the supplied predicate.
+     * Prunes the {@link AtlasClassLoader#invalidClasses} set according to the
+     * supplied predicate.
      *
-     * @param predicate The {@link Predicate<String>} to
-     *                  test against class names.
+     * @param predicate The {@link Predicate<String>} to test against class
+     *                  names.
      */
     public void pruneInvalidClasses(Predicate<? super String> predicate) {
         this.invalidClasses.removeIf(predicate);
@@ -294,13 +239,81 @@ public class AtlasClassLoader extends URLClassLoader {
     }
 
     /**
-     * Prunes the {@link AtlasClassLoader#invalidResources} set according
-     * to the supplied predicate.
+     * Prunes the {@link AtlasClassLoader#invalidResources} set according to
+     * the supplied predicate.
      *
-     * @param predicate The {@link Predicate<URL>} to
-     *                  test against resource urls.
+     * @param predicate The {@link Predicate<URL>} to test against resource
+     *                  URLs.
      */
     public void pruneInvalidResources(Predicate<? super URL> predicate) {
         this.invalidResources.removeIf(predicate);
+    }
+
+    /**
+     * Allow for modification of classfile buffers.
+     * <p>
+     * This method should be implemented in
+     * this {@link ClassLoader}'s subclasses.
+     *
+     * @param className  The class' name.
+     * @param classBytes The class' bytecode.
+     */
+    protected byte[] modifyClassBuffer(String className, byte[] classBytes) {
+        return classBytes;
+    }
+
+    private byte[] getClassBytes(URL url) {
+        if (!this.invalidResources.contains(url)) {
+            byte[] classBytes = this.resourceCache.computeIfAbsent(
+                url, classURL -> {
+                    InputStream inputStream;
+                    try {
+                        inputStream = url.openStream();
+
+                        ByteArrayOutputStream outputStream =
+                            new ByteArrayOutputStream();
+
+                        int temp;
+                        byte[] data = new byte[4];
+
+                        while (
+                            (
+                                temp = inputStream.read(
+                                    data,
+                                    0,
+                                    data.length
+                                )
+                            ) != -1
+                        ) {
+                            outputStream.write(data, 0, temp);
+                        }
+
+                        outputStream.flush();
+                        byte[] byteArray = outputStream.toByteArray();
+                        outputStream.close();
+                        return byteArray;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    return null;
+                });
+
+            if (classBytes != null) {
+                return classBytes;
+            }
+        }
+
+        this.invalidResources.add(url);
+        return null;
+    }
+
+    private URLConnection connect(URL url) {
+        try {
+            return url.openConnection();
+        } catch (Exception ignored) {
+        }
+
+        return null;
     }
 }

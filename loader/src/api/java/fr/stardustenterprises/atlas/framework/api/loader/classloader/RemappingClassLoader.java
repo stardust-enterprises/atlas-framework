@@ -31,11 +31,6 @@ public class RemappingClassLoader extends AtlasClassLoader {
         super(parent);
     }
 
-    @Override
-    protected byte[] modifyClassBuffer(String className, byte[] classBytes) {
-        return super.modifyClassBuffer(className, classBytes);
-    }
-
     /**
      * Adds a remapping rule to this {@link RemappingClassLoader}.
      *
@@ -43,9 +38,15 @@ public class RemappingClassLoader extends AtlasClassLoader {
      * @param newName The remapped package/class name.
      */
     public void remap(String original, String newName) {
-        if(original == null || newName == null) {
+        if (original == null || newName == null) {
             throw new IllegalArgumentException("Names cannot be null!");
         }
+
         this.remappingMap.put(original, newName);
+    }
+
+    @Override
+    protected byte[] modifyClassBuffer(String className, byte[] classBytes) {
+        return super.modifyClassBuffer(className, classBytes);
     }
 }
