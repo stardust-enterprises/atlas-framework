@@ -24,12 +24,12 @@ object Dependencies {
     // init-classpath
     const val LAUNCHWRAPPER = "1.12"
 
-    val kotlinModules = arrayOf("stdlib")
+    val kotlinModules = arrayOf<String>("stdlib")
 }
 
 object Repositories {
-    val mavenUrls: Array<String> =
-        arrayOf(
+    val mavenUrls =
+        arrayOf<String>(
 //            "https://jitpack.io/",
         )
 }
