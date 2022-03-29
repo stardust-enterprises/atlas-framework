@@ -104,7 +104,9 @@ public class AtlasClassLoader extends URLClassLoader {
                         try {
                             String packageName = className.substring(0, index);
 
-                            if (connection instanceof JarURLConnection jarURLConnection) {
+                            if (connection instanceof JarURLConnection) {
+                                JarURLConnection jarURLConnection =
+                                    (JarURLConnection) connection;
                                 JarFile jarFile = jarURLConnection.getJarFile();
 
                                 if (
