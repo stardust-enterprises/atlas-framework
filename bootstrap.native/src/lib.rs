@@ -105,3 +105,21 @@ pub unsafe extern "system" fn Java_appendToClassLoader0(
     let c_str = (*(*env)).GetStringUTFChars.unwrap()(env, file_path, &mut 0);
     (*(*JVMTI)).AddToBootstrapClassLoaderSearch.unwrap()(JVMTI, c_str);
 }
+
+// Library Injection
+
+#[cfg(windows)]
+#[no_mangle]
+pub extern "system" fn DllMain(
+    _: *const u8,
+    _: u32,
+    _: *const u8,
+) -> u32 {
+    1
+}
+
+#[cfg(unix)]
+#[no_mangle]
+pub extern "C" fn constructor() {
+
+}
