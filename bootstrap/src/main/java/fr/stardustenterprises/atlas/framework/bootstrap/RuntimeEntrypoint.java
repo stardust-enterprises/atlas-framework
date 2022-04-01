@@ -62,6 +62,9 @@ public class RuntimeEntrypoint {
         initializeMethod.invoke(bootloaderInstance);
     }
 
+    /**
+     * TODO(@xtrm-en)
+     */
     private static String getDefaultDataDir() {
         return null;
     }
