@@ -5,5 +5,7 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    with(Dependencies) {
+        implementation("org.jetbrains.kotlin", "kotlin-stdlib", KOTLIN)
+    }
 }

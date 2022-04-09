@@ -5,10 +5,12 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":annotations"))
-    implementation(project(":linker.analysis"))
-
     with(Dependencies) {
         implementation("org.jetbrains.kotlin", "kotlin-stdlib", KOTLIN)
+        testImplementation("org.jetbrains.kotlin", "kotlin-test", KOTLIN)
     }
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

@@ -39,9 +39,8 @@ sourceSets {
 }
 
 tasks.jar {
-    from(sourceSets["api"])
+    from(sourceSets["api"].output)
 }
-
 
 tasks.processResources {
     doLast {

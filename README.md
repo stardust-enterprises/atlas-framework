@@ -38,7 +38,7 @@ The annotations required for both the Mapping declarations and the generated lin
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 aliqua. Duis ultricies lacus sed turpis tincidunt. Ultrices eros in cursus turpis massa.
 
-### [bootstrap-native][module-bootstrap-native]
+### [bootstrap.native][module-bootstrap-native]
 
 Native module injected into the target process to append the framework's [bootstrap](#bootstrap) and start the runtime
 injection process.
@@ -84,7 +84,7 @@ describing what you changed, why and how.
 
 [module-bootstrap]: https://github.com/stardust-enterprises/atlas-framework/tree/trunk/bootstrap "bootstrap module link"
 
-[module-bootstrap-native]: https://github.com/stardust-enterprises/atlas-framework/tree/trunk/bootstrap-native "bootstrap-native module link"
+[module-bootstrap-native]: https://github.com/stardust-enterprises/atlas-framework/tree/trunk/bootstrap.native "bootstrap-native module link"
 
 [module-engine]: https://github.com/stardust-enterprises/atlas-framework/tree/trunk/engine "engine module link"
 
