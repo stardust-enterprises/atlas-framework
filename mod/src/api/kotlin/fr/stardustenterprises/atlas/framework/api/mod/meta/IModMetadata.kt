@@ -1,6 +1,7 @@
-package fr.stardustenterprises.atlas.framework.api.mod
+package fr.stardustenterprises.atlas.framework.api.mod.meta
 
 import fr.stardustenterprises.atlas.framework.versioning.SemanticVersion
+import fr.stardustenterprises.atlas.framework.versioning.toSemVer
 
 /**
  * Representation of a mod.
@@ -15,9 +16,9 @@ interface IModMetadata {
     val id: String
 
     /**
-     * The mod's name.
+     * The mod's display name.
      */
-    val name: String?
+    val displayName: String?
 
     /**
      * The mod's description.
@@ -36,9 +37,17 @@ interface IModMetadata {
         get() = emptyList()
 
     /**
-     * The related Git/source repository URL, as a [String].
+     * The mod's contact information.
      */
-    val repository: String?
+    val contact: IModContact?
+
+    /**
+     * The mod's license.
+     *
+     * May be provided in the [IModContact.repository]
+     * by setting this value to `repo`.
+     */
+    val licence: String?
 
     /**
      * Mod entrypoint declarations.
@@ -49,5 +58,6 @@ interface IModMetadata {
     /**
      * @return a [SemanticVersion] object.
      */
-    fun getSemVersion(): SemanticVersion
+    fun getSemanticVersion(): SemanticVersion =
+        this.version.toSemVer()
 }

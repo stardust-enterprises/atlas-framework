@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.api.mod
+package fr.stardustenterprises.atlas.framework.api.mod.meta
 
 /**
  * Represents the author of a mod.

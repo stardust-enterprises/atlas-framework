@@ -1,4 +1,4 @@
-package fr.stardustenterprises.atlas.framework.api.mod
+package fr.stardustenterprises.atlas.framework.api.mod.meta
 
 /**
  * An entrypoint for a mod.
@@ -22,4 +22,10 @@ interface IModEntrypoint {
      * The entrypoint's class name.
      */
     val className: String
+
+    /**
+     * The required adapter for this entrypoint.
+     */
+    val adapter: String
+        get() = "default"
 }

@@ -1,6 +1,6 @@
-package fr.stardustenterprises.atlas.framework.mod
+package fr.stardustenterprises.atlas.framework.mod.meta
 
-import fr.stardustenterprises.atlas.framework.api.mod.IModAuthor
+import fr.stardustenterprises.atlas.framework.api.mod.meta.IModAuthor
 
 /**
  * Default implementation for [IModAuthor].
