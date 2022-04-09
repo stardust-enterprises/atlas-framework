@@ -62,11 +62,6 @@ data class SemanticVersion(
             else if (other.preRelease == null) -1
             else preRelease.compareTo(other.preRelease)
         }
-        build != other.build -> {
-            if (build == null) 1
-            else if (other.build == null) -1
-            else build.compareTo(other.build)
-        }
         else -> 0
     }
 
@@ -78,3 +73,5 @@ data class SemanticVersion(
             (preRelease?.let { "-$it" } ?: "") +
             (build?.let { "+$it" } ?: "")
 }
+
+fun String.toSemVer(): SemanticVersion = SemanticVersion.from(this)
