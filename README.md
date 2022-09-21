@@ -1,4 +1,8 @@
-# Atlas Framework [![Maven Central][badge-mvnc]][project-mvnc] [![Build][badge-github-ci]][project-gradle-ci]
+# Outdated repository
+
+**IMPORTANT**: This project has been **superseded** and **moved** to [**a new organization**](https://github.com/atlas-fw).
+
+## Atlas Framework
 
 **Atlas** is a **next-gen** modding toolchain designed for intercompatibility and efficiency, and we're not taking this
 lightly.
